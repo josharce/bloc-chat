@@ -1,1 +1,8 @@
-<h1>Bloc-Chat</h1>
+<div id="roomContainer">
+    <h1 id="title">Bloc Chat</h1>
+    <div ng-repeat="rooms in home.allRooms">
+        <p id="rooms">{{rooms.$value}}</p>
+    </div>
+</div>
+
+<div id="chatContainer"></div>
