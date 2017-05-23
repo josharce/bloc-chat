@@ -1,0 +1,14 @@
+<form name="newRoomForm">
+    <div class="modal-header">
+        <h3 class="modal-title">Create New Room</h3>
+    </div>
+    <div class="modal-body">
+        <p>Enter room name</p>
+        <div ng-hide="checkRooms()" class="alert alert-danger" role="alert">Please enter another room name.</div>
+        <input name="newRoomName" ng-model="newRoomName" id="newRoomName" required>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" type="button" ng-click="newRoomForm.$valid && checkRooms() && ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

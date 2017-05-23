@@ -3,6 +3,7 @@
     <div ng-repeat="rooms in home.allRooms">
         <p id="rooms">{{rooms.$value}}</p>
     </div>
+    <button id="createRoomButton" ng-controller="NewRoomModalCtrl as modal" ng-click="open('sm')">Create New Room</button>
 </div>
 
 <div id="chatContainer"></div>

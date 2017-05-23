@@ -6,6 +6,13 @@
 
         Room.all = rooms;
 
+        Room.add = function(room) {
+            rooms.$add({$value: room}).then(function(room) {
+                var id = room.key;
+                rooms.$indexFor(id); // returns location in the array
+            });
+        } 
+
         return Room;
     }
 
@@ -13,3 +20,4 @@
         .module('blocChat')
         .factory('Room', ['$firebaseArray', Room])
 })();
+               

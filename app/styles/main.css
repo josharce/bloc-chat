@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html, body {
     height: 100%;
     font-family: sans-serif;
@@ -11,19 +5,20 @@ html, body {
 
 #title {
     margin: 25px;
-    color: #535558;
+    color: #C3CACD;
 }
 
 #rooms {
     margin-left: 25px;
     margin-bottom: 15px;
-    color: grey;
+    color: #90979F;
 }
 
 #roomContainer {
+    position: relative;
     width: 250px;
     min-height: 100%;
-    background-color: #dedede;
+    background-color: #19323C;
     overflow: auto;
     float: left;
 }
@@ -31,5 +26,16 @@ html, body {
 #chatContainer {
     width: 100%;
     min-height: 100%;
-    background-color: #282c34;
+    background-color: #F3F7F0;
+}
+
+#createRoomButton {
+    position: absolute;
+    background-color: #A93F55;
+    height: 50px;
+    width: 100%;
+    color: #E5C5CC;
+    bottom: 0px;
+    border: none;
+    font-size: 1.05em;
 }
