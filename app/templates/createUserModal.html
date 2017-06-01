@@ -1,0 +1,12 @@
+<form name="newUsernameForm">
+    <div class="modal-header">
+        <h3 class="modal-title">Enter Username</h3>
+    </div>
+    <div class="modal-body">
+        <p>Enter a username to start chatting!</p>
+        <input name="newUsername" ng-model="newUsername" id="newUsername" required>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" type="button" ng-click="newUsernameForm.$valid && ok()">OK</button>
+    </div>
+</form>
