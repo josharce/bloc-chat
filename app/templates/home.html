@@ -1,9 +1,35 @@
 <div id="roomContainer">
-    <h1 id="title">Bloc Chat</h1>
-    <div ng-repeat="rooms in home.allRooms">
-        <p id="rooms">{{rooms.$value}}</p>
+    <div id="titleContainer">
+        <h1 id="title">Bloc Chat</h1>
+    </div>
+    <h3 id="roomsHeading"><strong>Rooms</strong></h3>
+    <div id="rooms">
+        <p ng-click="setActiveRoom(room)" ng-repeat="room in home.allRooms" class="room">{{ room.$value }}</p>
     </div>
     <button id="createRoomButton" ng-controller="NewRoomModalCtrl as modal" ng-click="open('sm')">Create New Room</button>
 </div>
 
-<div id="chatContainer"></div>
+<div class="container-fluid" id="chatContainer">
+    <div ng-hide="activeRoom" id="defaultView">
+        <h3><em>Select or Create New Room to Send Messages</em></h3>
+    </div>
+    <div class="row">
+        <div ng-show="activeRoom" id="chatRoomTitle">
+            <h4>{{ activeRoom.$value }}</h4>
+        </div>
+    </div>
+    <div>
+        <div class="row" ng-repeat="message in messages">
+            <div ng-if="$even" class="messageBoxEven">
+                <p class="name"><strong>{{ message.username }}</strong></p>
+                <p class="message">{{ message.content }}</p>
+                <p class="timestamp"><em>{{ message.sentAt | date : "short"}}</em></p>
+            </div>
+            <div ng-if="$odd" class="messageBoxOdd">
+                <p class="name"><strong>{{ message.username }}</strong></p>
+                <p class="message">{{ message.content }}</p>
+                <p class="timestamp"><em>{{ message.sentAt | date : "short" }}</em></p>
+            </div>
+        </div>
+    </div>
+</div>

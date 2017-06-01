@@ -1,41 +1,136 @@
 html, body {
     height: 100%;
-    font-family: sans-serif;
-}
-
-#title {
-    margin: 25px;
-    color: #C3CACD;
-}
-
-#rooms {
-    margin-left: 25px;
-    margin-bottom: 15px;
-    color: #90979F;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 #roomContainer {
-    position: relative;
     width: 250px;
-    min-height: 100%;
-    background-color: #19323C;
-    overflow: auto;
+    background-color: #d6d6d6;
     float: left;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom-right-radius: 15px;
 }
 
-#chatContainer {
+#titleContainer {
+    background: #ffffff;
+    width: 210px;
+    height: 115px;
+    margin: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 50px 30px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #636466;
+    margin: 0 auto;
+}
+
+#roomsHeading {
+    border-bottom: 3px solid #00bbdd;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+#rooms {
+    position: absolute;
+    left: 0;
     width: 100%;
-    min-height: 100%;
-    background-color: #F3F7F0;
+    max-height: 80%;
+    padding-bottom: 210px;
+    overflow-y: scroll;
+}
+
+#rooms::-webkit-scrollbar {
+    display: none;
+}
+
+.room {
+    margin-left: 25px;
+    margin-bottom: 15px;
+    color: #333333;
+    font-size: 1.2em;
+}
+
+#rooms:hover {
+    cursor: pointer;
 }
 
 #createRoomButton {
     position: absolute;
-    background-color: #A93F55;
+    background: #00bbdd;
     height: 50px;
     width: 100%;
-    color: #E5C5CC;
+    color: #f8fdfe;
     bottom: 0px;
     border: none;
-    font-size: 1.05em;
+    font-size: 1.20em;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#chatContainer {
+    height: 100%;
+    overflow: auto;
+    background: #FFFFFF;
+}
+
+#defaultView {
+    height: 100%;
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#defaultView h3 {
+    margin: 0 auto;
+    color: #636466;
+    font-size: 1.5em;
+}
+
+#chatRoomTitle {
+    font-size: -1em;
+    width: 100%;
+    min-width: 400px;
+    background: #777777;
+    color: #fdfdfd;
+    padding: 10px 0 15px 25px;
+    margin-bottom: 25px;
+    float: left;
+}
+
+.messageBoxEven {
+    width: 100%;
+    padding: 10px;
+    min-width: 400px;
+}
+
+.messageBoxOdd {
+    width: 100%;
+    padding: 10px;
+    background: #c0e2f1;
+    border-radius: 20px;
+    min-width: 400px;
+}
+
+.name {
+    padding-left: 15px;
+}
+
+.message {
+    padding-left: 15px;
+    width: 80%;
+}
+
+.timestamp {
+    float: right;
+    margin-top: -45px;
 }
