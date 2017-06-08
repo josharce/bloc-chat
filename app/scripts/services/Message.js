@@ -10,6 +10,10 @@
             return messages;
         };
 
+        Message.send = function(newMessage) {
+            messages.$add(newMessage);
+        };
+
         return Message;
     }
 

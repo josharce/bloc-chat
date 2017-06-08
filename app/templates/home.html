@@ -18,8 +18,8 @@
             <h4>{{ activeRoom.$value }}</h4>
         </div>
     </div>
-    <div>
-        <div class="row" ng-repeat="message in messages">
+    <div ng-show="activeRoom" class="row" id="messagesContainer">
+        <div ng-repeat="message in messages">
             <div ng-if="$even" class="messageBoxEven">
                 <p class="name"><strong>{{ message.username }}</strong></p>
                 <p class="message">{{ message.content }}</p>
@@ -32,4 +32,8 @@
             </div>
         </div>
     </div>
+    <div ng-show="activeRoom" class="row" id="writeMessageContainer">
+        <textarea id="writeMessageTextArea" placeholder="Message {{ activeRoom.$value }}"></textarea>
+        <button ng-click="sendMessage()" id="sendMessageButton">Send Message</button>       
+    </div> 
 </div>
